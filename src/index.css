@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 :root {
   --primary-clr: #ee4950;
   --primary-clr-alt: #f3777d;
@@ -30,6 +32,7 @@ html {
 body {
   background: var(--bg-clr);
   color: var(--neutral-100-clr);
+  font-family: "Inter", sans-serif;
 }
 
 li {
@@ -50,6 +53,11 @@ input {
   cursor: pointer;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 /* ==============MAIN STYLE============== */
 main {
   width: 100dvw;
@@ -68,11 +76,15 @@ main {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.25rem;
+}
+
+.text-light {
+  color: var(--neutral-400-clr);
 }
 
 .label {
-  font-size: 1.25rem;
+  font-size: 0.75rem;
 }
 
 .row {
@@ -80,12 +92,21 @@ main {
   gap: 10px;
 }
 
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
 .items-center {
   align-items: center;
 }
 
-.space-between {
+.justify-between {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .border-l {
@@ -105,12 +126,48 @@ main {
   padding-inline: 3rem;
 }
 
+.px-xl {
+  padding-inline: 6rem;
+}
+
 .px-m {
   padding-inline: 1.5rem;
 }
 
 .flex-1 {
   flex: 1;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+.absolut {
+  position: absolute;
+}
+
+.-z-index {
+  z-index: -1;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-regular {
+  font-weight: 400;
 }
 
 /* =============SIDEBAR STYLE=========== */
@@ -126,4 +183,30 @@ main {
   width: 100dvw;
   height: 75px;
   background: var(--bg-clr-alt);
+}
+
+.played-music-cover {
+  height: 80%;
+  aspect-ratio: 1;
+  background: var(--neutral-100-clr);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  position: relative;
+  min-width: 100%;
+}
+
+.progress input {
+  --range-progress: 0;
+
+  flex: 1;
+  height: 3px;
+  accent-color: var(--primary-clr);
+}
+
+.progress input::before {
+  background: var(--primary-clr);
+  width: var(--range-progress);
 }

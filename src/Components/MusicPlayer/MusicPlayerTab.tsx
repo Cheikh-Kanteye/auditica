@@ -2,15 +2,20 @@ import IconButton from "../IconButton";
 import { IoMdShuffle, IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
 import { FaCirclePause, FaCirclePlay } from "react-icons/fa6";
 import { ImLoop } from "react-icons/im";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const MusicPlayTab = () => {
-  const [paused, setPaused] = useState(false);
-  const ControlIcon = paused ? FaCirclePause : FaCirclePlay;
+interface MusicPlayTabProps {
+  audioRef: React.RefObject<HTMLAudioElement>;
+  isPlaying: boolean;
+  togglePlayer: () => void;
+}
 
-  const togglePlayer = () => {
-    setPaused((prev) => !prev);
-  };
+const MusicPlayTab = ({
+  audioRef,
+  isPlaying = false,
+  togglePlayer,
+}: MusicPlayTabProps) => {
+  const ControlIcon = isPlaying ? FaCirclePause : FaCirclePlay;
 
   const shuffle = () => {
     console.log("shuffle");

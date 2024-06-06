@@ -74,7 +74,7 @@ const SongPlayingInfo = ({ audioRef, isPlaying }: SongPlayerInforProps) => {
         onLoadedMetadata={onLoadMetadata}
         controls
       />
-      <div className="justify-center items-center flex-1 col px-xl">
+      <div className="justify-center items-center flex-1 col px-m">
         <div className="justify-center items-center row">
           <h2 className="section-title font-semibold">{tracks[0].title}</h2>
           <span className="section-title text-light">•</span>

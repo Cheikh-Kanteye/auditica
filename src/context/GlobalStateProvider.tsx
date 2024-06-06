@@ -1,4 +1,10 @@
-import React, { PropsWithChildren, useContext, useMemo, useState } from "react";
+import React, {
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 type GlobalStateContextType = {
   openSidebar: boolean;
@@ -20,7 +26,6 @@ const GlobalStateContext =
 const GlobalStateProvider = ({ children }: PropsWithChildren) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [openPlayer, setOpenPlayer] = useState(false);
-
   const toggleSidebar = () => {
     setOpenSidebar((prev) => !prev);
   };

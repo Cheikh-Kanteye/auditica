@@ -95,6 +95,7 @@ main {
 .col {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .items-center {
@@ -170,12 +171,134 @@ main {
   font-weight: 400;
 }
 
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-dvw {
+  width: 100dvw;
+}
+
+.h-dvh {
+  height: 100dvh;
+}
+
+.link {
+  transition: 0.4s ease-in-out;
+}
+
+.link:hover {
+  color: #f3777d;
+  text-decoration: underline;
+}
 /* =============SIDEBAR STYLE=========== */
 .sidebar {
-  width: 200px;
+  max-width: 230px;
+  width: 100%;
   height: 100%;
-  min-width: 80px;
   background: var(--bg-clr-alt);
+  padding: 20px 16px;
+  gap: 36px;
+}
+
+.navitem {
+  padding: 10px;
+  border-radius: 2px;
+  transition: background 0.4s linear;
+  cursor: pointer;
+}
+
+.navitem::backdrop {
+  display: none;
+}
+
+.navitem.active {
+  background: var(--primary-clr);
+}
+
+.sidebar-header {
+  justify-content: space-between;
+}
+
+.toggle-menu {
+  background: var(--bg-clr-alt);
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+.toggle-menu.open {
+  margin: 20px;
+}
+
+.toggle-menu.close {
+  background: var(--bg-clr);
+}
+
+.logo {
+  width: fit-content;
+}
+
+.logo img {
+  width: 150px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 968px) {
+  .sidebar {
+    width: fit-content;
+  }
+  .navitem {
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+  }
+  .navitem p {
+    display: none;
+  }
+
+  .sidebar.shown {
+    left: 0;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    left: -100%;
+  }
+  .navitem {
+    width: 100%;
+    aspect-ratio: auto;
+    justify-content: start;
+  }
+
+  .navitem p {
+    display: block;
+  }
+
+  .toggle-menu {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+  }
+
+  .toggle-menu:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 14px -1px var(--primary-clr-alt);
+  }
 }
 
 /* =============PLAYER STYLE============== */
